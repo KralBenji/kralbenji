@@ -1,0 +1,48 @@
+/* ==========================
+   Global Reset Extensions
+========================== */
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+p {
+    font-weight: 400;
+    color: var(--color-muted);
+}
+
+
+/* Links */
+
+a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-accent);
+}

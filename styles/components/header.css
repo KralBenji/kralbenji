@@ -1,0 +1,139 @@
+/* ==========================
+   Header - Mobile First
+========================== */
+
+.site-header {
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Layout */
+
+.header-inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: var(--space-sm) 0;
+}
+
+
+/* ==========================
+   Hamburger Button
+========================== */
+
+.nav-toggle {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1100;
+    /* stays above dropdown */
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 2px;
+    background: white;
+    display: block;
+}
+
+
+/* ==========================
+   Mobile Navigation
+========================== */
+
+.site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: black;
+    display: none;
+}
+
+.site-nav.active {
+    display: block;
+}
+
+.nav-list {
+    list-style: none;
+    padding: var(--space-md);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+
+/* ==========================
+   Tablet (481px–767px)
+========================== */
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .site-header {
+        background: #000;
+    }
+    .nav-toggle {
+        display: none;
+    }
+    .site-nav {
+        display: block !important;
+        position: static;
+        background: none;
+    }
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 8px 0;
+        margin: 0;
+    }
+}
+
+
+/* ==========================
+   Desktop (≥768px)
+========================== */
+
+@media (min-width: 768px) {
+    .site-header {
+        background: #000;
+    }
+    .nav-toggle {
+        display: none;
+    }
+    .site-nav {
+        display: block !important;
+        position: static;
+        background: none;
+    }
+    .nav-list {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: var(--space-3xl);
+        padding: var(--space-xxs) 0;
+        margin: 0;
+    }
+}
+
+.site-header {
+    position: static !important;
+    top: auto !important;
+}
