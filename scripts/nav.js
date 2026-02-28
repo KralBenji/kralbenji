@@ -1,10 +1,23 @@
-const navToggle = document.querySelector('.nav-toggle');
-const siteNav = document.querySelector('.site-nav');
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.site-nav');
 
-if (navToggle && siteNav) {
-    navToggle.addEventListener('click', () => {
-        const isOpen = siteNav.classList.toggle('active');
-        navToggle.classList.toggle('active', isOpen);
-        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (!navToggle || !navMenu) {
+        console.log('Nav elements not found');
+        return;
+    }
+
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
     });
-}
+});
+
+window.addEventListener('resize', function() {
+    if (window.innerWidth >= 768) {
+        const navMenu = document.querySelector('.site-nav');
+        navMenu.classList.remove('active');
+    }
+});

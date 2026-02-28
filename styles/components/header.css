@@ -3,6 +3,7 @@
 ========================== */
 
 .site-header {
+    position: relative;
     top: 0;
     z-index: 1000;
 }
@@ -14,19 +15,21 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: var(--space-sm) 0;
+    padding: var(--space-sm) var(--space-md);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 
 /* ==========================
-   Hamburger Button
+   Hamburger Button (Mobile Default)
 ========================== */
 
 .nav-toggle {
-    position: absolute;
+    position: fixed;
+    /* mobile overlay trigger */
     top: var(--space-sm);
     right: var(--space-sm);
-    transform: none;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -34,8 +37,8 @@
     border: none;
     cursor: pointer;
     padding: 8px;
-    z-index: 1100;
-    /* stays above dropdown */
+    z-index: 10001;
+    /* above nav panel */
 }
 
 .nav-toggle span {
@@ -47,16 +50,19 @@
 
 
 /* ==========================
-   Mobile Navigation
+   Mobile Navigation (Default)
 ========================== */
 
 .site-nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: black;
     display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 100vh;
+    background: #000;
+    padding: 6rem 2rem 2rem;
+    z-index: 10000;
 }
 
 .site-nav.active {
@@ -65,7 +71,7 @@
 
 .nav-list {
     list-style: none;
-    padding: var(--space-md);
+    padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -78,22 +84,30 @@
     font-weight: 600;
 }
 
+.site-nav.active {
+    display: flex !important;
+    /* prevent mobile override */
+}
+
 
 /* ==========================
    Tablet (481px–767px)
 ========================== */
 
 @media (min-width: 481px) and (max-width: 767px) {
-    .site-header {
-        background: #000;
+    .header-inner {
+        justify-content: center;
     }
     .nav-toggle {
         display: none;
     }
     .site-nav {
-        display: block !important;
+        display: flex;
         position: static;
+        width: auto;
+        height: auto;
         background: none;
+        padding: 0;
     }
     .nav-list {
         display: flex;
@@ -104,6 +118,13 @@
         padding: 8px 0;
         margin: 0;
     }
+    .nav-list li {
+        min-width: 0;
+        /* THIS is the key */
+    }
+    .nav-list a {
+        font-size: clamp(0.9rem, 1.5vw, 1rem);
+    }
 }
 
 
@@ -112,6 +133,9 @@
 ========================== */
 
 @media (min-width: 768px) {
+    .header-inner {
+        justify-content: center;
+    }
     .site-header {
         background: #000;
     }
@@ -119,21 +143,55 @@
         display: none;
     }
     .site-nav {
-        display: block !important;
+        display: flex !important;
         position: static;
+        width: auto;
+        height: auto;
         background: none;
+        padding: 0;
     }
     .nav-list {
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: var(--space-3xl);
+        gap: var(--space-2xl);
         padding: var(--space-xxs) 0;
         margin: 0;
     }
 }
 
-.site-header {
-    position: static !important;
-    top: auto !important;
+
+/* ==========================
+   Nav Link Base (Hover Animations)
+========================== */
+
+.site-nav a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+
+/* Underline animation */
+
+.site-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .site-nav a:hover {
+        color: #ccc;
+    }
+    .site-nav a:hover::after {
+        width: 100%;
+    }
 }

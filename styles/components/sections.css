@@ -21,21 +21,6 @@
     margin-top: var(--space-sm);
 }
 
-.btn-primary {
-    display: inline-block;
-    padding: var(--space-xs) var(--space-md);
-    border-radius: 999px;
-    background: var(--color-accent);
-    color: var(--color-bg);
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.btn-primary:hover {
-    background: #98b5ff;
-}
-
 .about-section {
     text-align: center;
     padding-top: var(--space-sm);
@@ -54,6 +39,7 @@
     margin: var(--space-sm) auto 0;
 }
 
+
 /* ==========================
    Social Icons
 ========================== */
@@ -68,7 +54,7 @@
 }
 
 .social-icons img {
-    width: 40px;
+    width: auto;
     height: 40px;
     opacity: 0;
     transform: translateY(var(--space-sm));
@@ -89,4 +75,20 @@
 
 .social-icons a:active img {
     transform: scale(0.88);
+}
+
+.social-icon {
+    height: 40px;
+    width: 40px;
+    color: var(--color-text);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+    transform: translateY(-4px) scale(1.15);
+    color: var(--color-accent);
+}
+
+.social-link:active .social-icon {
+    transform: scale(0.9);
 }

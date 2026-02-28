@@ -47,8 +47,8 @@ a {
     transition: color 0.3s ease;
 }
 
-a:hover,
-a:focus {
+main a:not(.btn):hover,
+main a:not(.btn):focus {
     color: var(--color-accent);
     text-decoration: underline;
 }

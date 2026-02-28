@@ -39,9 +39,11 @@
     position: absolute;
     inset: 0;
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
+    /* pushes content toward bottom */
     justify-content: center;
-    padding-top: 80px;
+    padding-bottom: 100px;
+    /* control how far up from bottom */
     z-index: 2;
 }
 
@@ -57,7 +59,7 @@
         height: 260px;
     }
     .hero-content {
-        padding-top: 100px;
+        padding-bottom: 70px;
     }
     .hero-image {
         object-position: center 55%;
@@ -84,14 +86,14 @@
 }
 
 
-/* Desktop */
+/* Laptop */
 
 @media (min-width: 768px) {
     .hero {
         height: 340px;
     }
     .hero-content {
-        padding-top: 130px;
+        padding-bottom: 70px;
     }
     .hero-image {
         object-position: center 45%;
