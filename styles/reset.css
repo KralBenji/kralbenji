@@ -1,3 +1,17 @@
+/* ==========================
+   Modern Minimal Reset
+========================== */
+
+
+/* Box sizing */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
 /* Remove default spacing */
 
 html,
@@ -7,9 +21,26 @@ body {
 }
 
 
-/* Make images behave properly */
+/* Improve media defaults */
 
 img {
     display: block;
     max-width: 100%;
+    height: auto;
+}
+
+
+/* Remove default list spacing */
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Make buttons inherit font */
+
+button {
+    font: inherit;
 }
