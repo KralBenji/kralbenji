@@ -1,0 +1,74 @@
+.music-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.music-card.active .music-links {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.listen-toggle {
+    margin-top: 1rem;
+    padding: 0.6rem 1.5rem;
+    border-radius: 999px;
+    border: none;
+    background: var(--color-accent);
+    color: var(--color-bg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.listen-toggle:hover {
+    transform: translateY(-2px);
+}
+
+.listen-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+
+/* Arrow animation */
+
+.listen-arrow {
+    transition: transform 0.3s ease;
+}
+
+
+/* Rotate arrow when active */
+
+.music-card.active .listen-arrow {
+    transform: rotate(180deg);
+}
+
+.platform-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+.platform-icon {
+    width: 26px;
+    height: 26px;
+    fill: currentColor;
+}
+
+
+/* Subtle hover glow */
+
+.platform-link:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 6px var(--color-accent));
+}

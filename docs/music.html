@@ -11,9 +11,13 @@
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/layout.css">
     <link rel="stylesheet" href="../styles/components/header.css">
+    <link rel="stylesheet" href="../styles/music.css">
     <link rel="stylesheet" href="../styles/components/hero.css">
     <link rel="stylesheet" href="../styles/components/sections.css">
 
+    <script src="../scripts/main.js" defer></script>
+    <script src="../scripts/nav.js" defer></script>
+    <script src="../scripts/music.js" defer></script>
 
 </head>
 
@@ -52,7 +56,114 @@
             </nav>
         </div>
     </header>
-    <script src="../scripts/main.js"></script>
+
+    <main class="music-page">
+
+        <!-- ================= Projects ================= -->
+        <section class="music-section">
+            <h2 class="music-section-title">Projects</h2>
+
+            <div class="music-carousel">
+
+                <div class="music-card">
+
+                    <img src="../images/offshore_coverart.jpg" alt="Offshore Cover Art" class="music-card-image">
+
+                    <div class="music-card-body">
+                        <h3 class="music-card-title">Offshore</h3>
+
+                        <p class="music-card-description">
+                            A blend of melodic rap and dreamlike surf production.
+                        </p>
+
+                        <button class="listen-toggle">
+                            <span>Listen</span>
+                                <svg class="listen-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                        </button>
+
+                        <div class="music-links">
+                            <a href="https://open.spotify.com/album/6J5r74ape3755Qgrlv47Xk?go=1&nd=1&dlsi=1a7e20f41fa744fc" target="_blank" rel="noopener noreferrer">Spotify</a>
+                            <a href="https://music.apple.com/us/album/offshore/1699875612" target="_blank" rel="noopener noreferrer">Apple Music</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= Singles ================= -->
+        <section class="music-section">
+            <h2 class="music-section-title">Singles</h2>
+
+            <div class="music-carousel">
+
+                <div class="music-card">
+
+                    <img src="images/single1.jpg" alt="Single One Cover Art" class="music-card-image">
+
+                    <div class="music-card-body">
+                        <h3 class="music-card-title">Single One</h3>
+
+                        <p class="music-card-description">
+                            A focused, melodic release showcasing lyrical depth.
+                        </p>
+
+                        <button class="listen-toggle">
+                        Listen
+                    </button>
+
+                        <div class="music-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer">Spotify</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">Apple Music</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= Exclusives ================= -->
+        <section class="music-section">
+            <h2 class="music-section-title">Exclusives</h2>
+
+            <div class="music-carousel">
+
+                <div class="music-card">
+
+                    <img src="images/exclusive1.jpg" alt="Exclusive Track Cover Art" class="music-card-image">
+
+                    <div class="music-card-body">
+                        <h3 class="music-card-title">Exclusive Track</h3>
+
+                        <p class="music-card-description">
+                            Available only on YouTube and SoundCloud.
+                        </p>
+
+                        <button class="listen-toggle">
+                        Listen
+                    </button>
+
+                        <div class="music-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
 </body>
 
 </html>
