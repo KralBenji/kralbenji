@@ -9,3 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+document.querySelectorAll('.music-links').forEach(container => {
+    const icons = container.querySelectorAll('.platform-link');
+
+    if (icons.length % 2 !== 0) {
+        container.classList.add('odd-count');
+    }
+});

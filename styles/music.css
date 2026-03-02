@@ -1,17 +1,44 @@
-.music-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.3s ease;
+/* ==================================================
+   MUSIC SECTION
+   Mobile First
+================================================== */
+
+
+/* ==================================================
+   1. CARD STRUCTURE
+================================================== */
+
+.music-card {
+    position: relative;
 }
 
-.music-card.active .music-links {
-    max-height: 200px;
-    opacity: 1;
+.music-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    /* Space for absolute music-links overlay */
+    padding-bottom: 8rem;
 }
+
+.music-card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.music-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ==================================================
+   2. LISTEN BUTTON
+================================================== */
 
 .listen-toggle {
     margin-top: 1rem;
@@ -22,18 +49,15 @@
     color: var(--color-bg);
     font-weight: 600;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     transition: transform 0.2s ease;
 }
 
 .listen-toggle:hover {
     transform: translateY(-2px);
-}
-
-.listen-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
 }
 
 
@@ -43,12 +67,51 @@
     transition: transform 0.3s ease;
 }
 
-
-/* Rotate arrow when active */
-
 .music-card.active .listen-arrow {
     transform: rotate(180deg);
 }
+
+
+/* ==================================================
+   3. MUSIC LINKS (Overlay Icons)
+================================================== */
+
+.music-links {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%, 10px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 85%;
+    max-width: 220px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Slight adjustment when odd number of icons */
+
+.music-links.odd-count {
+    max-width: 180px;
+}
+
+
+/* Active state */
+
+.music-card.active .music-links {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+}
+
+
+/* ==================================================
+   4. PLATFORM ICONS
+================================================== */
 
 .platform-link {
     display: inline-flex;
@@ -59,6 +122,11 @@
     transition: transform 0.2s ease, filter 0.3s ease;
 }
 
+.platform-link:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 6px var(--color-accent));
+}
+
 .platform-icon {
     width: 26px;
     height: 26px;
@@ -66,9 +134,89 @@
 }
 
 
-/* Subtle hover glow */
+/* ==================================================
+   5. SECTION TITLES
+================================================== */
 
-.platform-link:hover {
-    transform: translateY(-2px);
-    filter: drop-shadow(0 0 6px var(--color-accent));
+.music-section-title {
+    text-align: center;
+}
+
+
+/* ==================================================
+   6. CAROUSEL (Shared Base)
+================================================== */
+
+.music-carousel {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* Remove scrollbar (all sections) */
+
+.music-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.music-carousel {
+    scrollbar-width: none;
+}
+
+
+/* ==================================================
+   7. SECTION-SPECIFIC CAROUSELS
+================================================== */
+
+
+/* Projects */
+
+.projects-section .music-carousel {
+    gap: 1.25rem;
+    padding: 0 var(--space-sm);
+    scroll-padding-left: var(--space-sm);
+}
+
+.projects-section .music-card {
+    flex: 0 0 75%;
+}
+
+
+/* Singles */
+
+.singles-section .music-carousel {
+    gap: 1rem;
+}
+
+.singles-section .music-card {
+    flex: 0 0 60%;
+}
+
+
+/* Exclusives */
+
+.exclusives-section .music-carousel {
+    gap: 0.8rem;
+}
+
+.exclusives-section .music-card {
+    flex: 0 0 55%;
+}
+
+
+/* ==================================================
+   8. DESKTOP LAYOUT
+================================================== */
+
+@media (min-width: 768px) {
+    .music-carousel {
+        overflow: visible;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    .music-card {
+        flex: initial;
+    }
 }
