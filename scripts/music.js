@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Wrap another icon if there's only 1 in the last row
 document.querySelectorAll('.music-links').forEach(container => {
     const icons = container.querySelectorAll('.platform-link');
 
