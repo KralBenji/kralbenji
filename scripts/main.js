@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(() => {
           image.classList.add("animate");
-        }, index * 100); // adjust speed here
+        }, index * 50); // adjust speed here
 
         observer.unobserve(image);
       });
