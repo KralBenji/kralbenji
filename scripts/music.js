@@ -1,20 +1,70 @@
-// Music Listen Button - Toggle
 document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll(".listen-toggle");
+  const musicCards = document.querySelectorAll(".music-card");
+  const musicLinks = document.querySelectorAll(".music-links");
+  const carousels = document.querySelectorAll(".music-carousel");
 
-    buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-            const card = button.closest(".music-card");
-            card.classList.toggle("active");
-        });
-    });
-});
+  musicCards.forEach((card) => {
+    const listenButton = card.querySelector(".listen-toggle");
+    const cardImage = card.querySelector(".music-card-image");
 
-// Wrap another icon if there's only 1 in the last row
-document.querySelectorAll('.music-links').forEach(container => {
-    const icons = container.querySelectorAll('.platform-link');
+    function toggleListenLinks() {
+      card.classList.toggle("active");
+    }
+
+    if (listenButton) {
+      listenButton.addEventListener("click", toggleListenLinks);
+    }
+
+    if (cardImage) {
+      cardImage.addEventListener("click", toggleListenLinks);
+      cardImage.style.cursor = "pointer";
+    }
+  });
+
+  musicLinks.forEach((container) => {
+    const icons = container.querySelectorAll(".platform-link");
 
     if (icons.length % 2 !== 0) {
-        container.classList.add('odd-count');
+      container.classList.add("odd-count");
     }
+  });
+
+  carousels.forEach((carousel) => {
+    const cards = carousel.querySelectorAll(".music-card");
+
+    if (!cards.length) return;
+
+    function updateActiveCard() {
+      const carouselRect = carousel.getBoundingClientRect();
+      const centerX = carouselRect.left + carouselRect.width / 2;
+
+      let closestCard = null;
+      let closestDistance = Infinity;
+
+      cards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.left + rect.width / 2;
+        const distance = Math.abs(centerX - cardCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestCard = card;
+        }
+      });
+
+      cards.forEach((card) => card.classList.remove("active-center"));
+
+      if (closestCard) {
+        closestCard.classList.add("active-center");
+      }
+    }
+
+    carousel.addEventListener("scroll", () => {
+      requestAnimationFrame(updateActiveCard);
+    });
+
+    window.addEventListener("resize", updateActiveCard);
+
+    updateActiveCard();
+  });
 });

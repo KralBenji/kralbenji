@@ -1,0 +1,47 @@
+/* ==========================
+   Visual Map of my CSS Files
+========================== */
+
+styles/
+│
+├── reset.css
+│   └── Browser cleanup / default style reset
+│
+├── variables.css
+│   └── Colors, spacing, font sizes, reusable values
+│
+├── base.css
+│   └── Body, typography, links, general site defaults
+│
+├── layout.css
+│   └── Global structure
+│       ├── .container
+│       ├── header/nav positioning
+│       ├── global section spacing
+│       └── footer
+│
+├── components/
+│   │
+│   ├── header.css
+│   │   └── Header-specific styling
+│   │
+│   ├── hero.css
+│   │   └── Hero/banner styling
+│   │
+│   └── sections.css
+│       └── Reusable section pieces
+│           ├── section titles
+│           ├── about section
+│           ├── latest release
+│           └── social icons
+│
+└── music.css
+    └── Music page only
+        ├── music cards
+        ├── listen buttons
+        ├── platform icons
+        ├── music section spacing overrides
+        ├── carousel
+        ├── snap scrolling
+        ├── active-center scale effect
+        └── desktop music grid
