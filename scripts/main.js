@@ -1,56 +1,47 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const icons = document.querySelectorAll(".social-icons img");
+  initSectionTitleLines();
+  initImageAnimations();
+  initContentAnimations();
+  initSocialIconAnimations();
+});
 
-  if (!icons.length) return;
+/* ==========================
+   Section Title Underline Animation
+========================== */
 
-  const iconObserver = new IntersectionObserver(
+function initSectionTitleLines() {
+  const titleLines = document.querySelectorAll(".section-title-line");
+
+  if (!titleLines.length) return;
+
+  const lineObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
 
-        const index = Array.from(icons).indexOf(entry.target);
-
         setTimeout(() => {
-          entry.target.classList.add("show");
-        }, index * 150);
+          entry.target.classList.add("animate");
+        }, 150);
 
         observer.unobserve(entry.target);
       });
     },
     {
-      threshold: 0.4,
+      threshold: 0.5,
     },
   );
 
-  icons.forEach((icon) => iconObserver.observe(icon));
-});
+  titleLines.forEach((line) => lineObserver.observe(line));
+}
 
-// Section title underline animation
-const titleLines = document.querySelectorAll(".section-title-line");
+/* ==========================
+   Image Fade-Up Animation
+========================== */
 
-const lineObserver = new IntersectionObserver(
-  (entries, observer) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
+function initImageAnimations() {
+  const animatedImages = document.querySelectorAll(".about-image, .about-story-image, .music-card-image");
 
-      // slight delay for nicer feel
-      setTimeout(() => {
-        entry.target.classList.add("animate");
-      }, 150);
-
-      observer.unobserve(entry.target);
-    });
-  },
-  {
-    threshold: 0.5,
-  },
-);
-
-titleLines.forEach((line) => lineObserver.observe(line));
-
-// Image animation - fade in and up
-document.addEventListener("DOMContentLoaded", () => {
-  const animatedImages = document.querySelectorAll(".about-image, .music-card-image");
+  if (!animatedImages.length) return;
 
   const imageObserver = new IntersectionObserver(
     (entries, observer) => {
@@ -58,13 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!entry.isIntersecting) return;
 
         const image = entry.target;
-
-        // Get index relative to all images
         const index = Array.from(animatedImages).indexOf(image);
 
         setTimeout(() => {
           image.classList.add("animate");
-        }, index * 50); // adjust speed here
+        }, index * 50);
 
         observer.unobserve(image);
       });
@@ -75,21 +64,56 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   animatedImages.forEach((image) => imageObserver.observe(image));
-});
+}
 
-// Social Links Animation - fade in and up with stagger
-document.addEventListener("DOMContentLoaded", () => {
-  const animatedItems = document.querySelectorAll(".social-link");
+/* ==========================
+   Reusable Content Animations
+========================== */
+
+function initContentAnimations() {
+  const animatedItems = document.querySelectorAll(".fade-up, .fade-in-left");
 
   if (!animatedItems.length) return;
 
-  const itemObserver = new IntersectionObserver(
+  const contentObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
 
-        const items = Array.from(animatedItems);
-        const index = items.indexOf(entry.target);
+        const parent = entry.target.parentElement;
+        const siblings = Array.from(parent.querySelectorAll(".fade-up, .fade-in-left"));
+        const index = siblings.indexOf(entry.target);
+
+        setTimeout(() => {
+          entry.target.classList.add("animate");
+        }, index * 200); // 👈 stagger timing
+
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.25,
+    },
+  );
+
+  animatedItems.forEach((item) => contentObserver.observe(item));
+}
+
+/* ==========================
+   Social Icon Animation
+========================== */
+
+function initSocialIconAnimations() {
+  const socialLinks = document.querySelectorAll(".social-link");
+
+  if (!socialLinks.length) return;
+
+  const socialObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const index = Array.from(socialLinks).indexOf(entry.target);
 
         setTimeout(() => {
           entry.target.classList.add("animate");
@@ -103,5 +127,5 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   );
 
-  animatedItems.forEach((item) => itemObserver.observe(item));
-});
+  socialLinks.forEach((link) => socialObserver.observe(link));
+}

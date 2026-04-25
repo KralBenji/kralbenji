@@ -1,0 +1,101 @@
+/* ==================================================
+   SHOP PAGE - Mobile First
+================================================== */
+
+/* ==================================================
+   1. SECTION LAYOUT
+================================================== */
+
+.shop-section {
+  text-align: center;
+  padding-top: 0;
+}
+
+.shop-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.shop-intro {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==================================================
+   2. SHOP GRID
+================================================== */
+
+.shop-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+/* ==================================================
+   3. SHOP ITEMS
+================================================== */
+
+.shop-item {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-lg) var(--space-md);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: default;
+}
+
+.shop-item h3 {
+  margin-top: var(--space-xs);
+}
+
+.shop-price {
+  font-weight: 700;
+}
+
+/* ==================================================
+   4. SHOP ICONS
+================================================== */
+
+.shop-icon {
+  width: 64px;
+  height: 64px;
+  color: var(--color-text);
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.shop-item:hover .shop-icon {
+  transform: scale(1.1);
+  color: var(--color-accent);
+}
+
+/* ==================================================
+   5. BUTTON STATE
+================================================== */
+
+.shop-item .btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+/* ==================================================
+   6. DESKTOP LAYOUT
+================================================== */
+
+@media (min-width: 768px) {
+  .shop-grid {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .shop-item {
+    flex: 1;
+  }
+}

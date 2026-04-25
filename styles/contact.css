@@ -75,3 +75,20 @@
   align-self: center;
   margin-top: var(--space-sm);
 }
+
+/* ==================================================
+   4. FORM ANIMATION
+================================================== */
+
+.contact-form.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.contact-form.fade-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}

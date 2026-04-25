@@ -160,3 +160,20 @@
 .social-link:active .social-icon {
   transform: scale(0.9);
 }
+
+/* ==================================================
+   6. GLOBAL TEXT ANIMATION (LEFT → RIGHT)
+================================================== */
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.fade-in-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
