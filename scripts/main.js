@@ -76,3 +76,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animatedImages.forEach((image) => imageObserver.observe(image));
 });
+
+// Social Links Animation - fade in and up with stagger
+document.addEventListener("DOMContentLoaded", () => {
+  const animatedItems = document.querySelectorAll(".social-link");
+
+  if (!animatedItems.length) return;
+
+  const itemObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const items = Array.from(animatedItems);
+        const index = items.indexOf(entry.target);
+
+        setTimeout(() => {
+          entry.target.classList.add("animate");
+        }, index * 100);
+
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.25,
+    },
+  );
+
+  animatedItems.forEach((item) => itemObserver.observe(item));
+});

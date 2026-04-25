@@ -22,6 +22,7 @@
   text-align: center;
 }
 
+/* Blue underline */
 .section-title-line {
   width: 90%;
   height: 4px;
@@ -38,7 +39,7 @@
   transform: scaleX(1);
 }
 
-/* Standard spacing between title/line and section content */
+/* Consistent spacing below titles */
 .section-content {
   margin-top: var(--space-md);
 }
@@ -86,7 +87,27 @@
 }
 
 /* ==================================================
-   4. SOCIAL ICONS
+   4. GLOBAL FADE-UP ANIMATION SYSTEM
+================================================== */
+
+/* Reusable animation base */
+.fade-up {
+  opacity: 0;
+  transform: translateY(var(--space-sm));
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+  will-change: transform, opacity;
+}
+
+/* When animated in */
+.fade-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==================================================
+   5. SOCIAL ICONS (FOOTER / GLOBAL)
 ================================================== */
 
 .social-icons {
@@ -98,34 +119,28 @@
   margin-top: var(--space-md);
 }
 
-.social-icons img {
-  width: auto;
-  height: 40px;
+/* Each clickable icon */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Apply reusable animation */
   opacity: 0;
   transform: translateY(var(--space-sm));
   transition:
     opacity 0.5s ease,
-    transform 0.5s ease,
-    filter 0.3s ease;
-  cursor: pointer;
+    transform 0.5s ease;
   will-change: transform, opacity;
 }
 
-.social-icons img.show {
+/* Animate in */
+.social-link.animate {
   opacity: 1;
   transform: translateY(0);
 }
 
-.social-icons a:hover img {
-  transform: translateY(-4px) scale(1.15);
-  filter: brightness(0) saturate(100%) invert(59%) sepia(15%) saturate(1733%) hue-rotate(196deg) brightness(92%)
-    contrast(92%);
-}
-
-.social-icons a:active img {
-  transform: scale(0.88);
-}
-
+/* SVG icon styling */
 .social-icon {
   height: 40px;
   width: 40px;
@@ -135,11 +150,13 @@
     color 0.3s ease;
 }
 
+/* Hover effects */
 .social-link:hover .social-icon {
   transform: translateY(-4px) scale(1.15);
   color: var(--color-accent);
 }
 
+/* Click feedback */
 .social-link:active .social-icon {
   transform: scale(0.9);
 }
