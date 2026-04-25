@@ -5,6 +5,8 @@
 .btn {
   display: inline-block;
   padding: var(--space-xs) var(--space-md);
+  outline: none;
+  border: none;
   border-radius: 999px;
   font-weight: 700;
   letter-spacing: 0.05em;
