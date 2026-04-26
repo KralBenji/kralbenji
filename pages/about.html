@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kral Benji | Contact</title>
+    <title>Kral Benji | About</title>
 
     <!-- Raleway Font Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,13 +18,12 @@
     <link rel="stylesheet" href="../styles/components/header.css" />
     <link rel="stylesheet" href="../styles/components/hero.css" />
     <link rel="stylesheet" href="../styles/components/sections.css" />
-    <link rel="stylesheet" href="../styles/components/buttons.css" />
-    <link rel="stylesheet" href="../styles/contact.css" />
-    <link rel="stylesheet" href="../styles/music.css" />
+    <link rel="stylesheet" href="../styles/about.css" />
 
     <!-- Script Links -->
     <script src="../scripts/main.js" defer></script>
     <script src="../scripts/nav.js" defer></script>
+    <script src="../scripts/about.js" defer></script>
   </head>
 
   <body>
@@ -51,64 +50,71 @@
 
         <nav class="site-nav">
           <ul class="nav-list">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../docs/about.html">About</a></li>
-            <li><a href="../docs/music.html">Music</a></li>
-            <!-- <li><a href="https://linktr.ee/kralbenji" target="_blank">Linktree</a></li> -->
-            <li><a href="../docs/shop.html">Shop</a></li>
-            <li><a href="../docs/contact.html">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/music">Music</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <!-- ==========================
-         Contact
+         About 
     =========================== -->
-    <main class="contact-page">
-      <section class="contact-section">
-        <div class="container contact-inner">
+    <main class="about-page">
+      <section class="about-section">
+        <div class="container">
+          <!-- Centered Heading -->
           <div class="section-title-wrap">
-            <h2 class="section-title">Contact</h2>
+            <h2 class="section-title">My Journey</h2>
             <div class="section-title-line"></div>
           </div>
 
-          <p class="contact-intro section-content">
-            For booking, collaborations, design work, or general questions, send a message below.
-          </p>
+          <div class="about-story section-content">
+            <!-- Row 1 -->
+            <div class="about-story-row">
+              <img src="../images/transference_coverart.png" alt="Kral Benji portrait" class="about-story-image" />
 
-          <form class="contact-form fade-up" action="https://formspree.io/f/mnjlwrdp" method="POST">
-            <!-- Redirect to thank you page after submission -->
-            <input type="hidden" name="_redirect" value="https://kralbenji.github.io/kralbenji/docs/thanks.html" />
-
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" required />
+              <div class="about-story-text fade-in-left">
+                <p>
+                  Music all started as a way to express myself. In March of 2021 I started freestyling everyday for fun
+                  over beats I found on YouTube, and after a while I started getting more serious about it. Some days I
+                  would spend hours in my studio freestyling over beats, speaking about the struggles I was going
+                  through at the time.
+                </p>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" required />
+            <!-- Row 2 -->
+            <div class="about-story-row about-story-row-reverse">
+              <img src="../images/birthday_photo_7.png" alt="Kral Benji portrait" class="about-story-image" />
+
+              <div class="about-story-text fade-in-left">
+                <p>
+                  Around thanksgiving of 2021, I decided to purchase an audio interface, a new microphone, and FL Studio
+                  (because they had the half off sale for black friday). I started to mess around in FL Studio for the
+                  next month, and during the last week of December I had freestyled my four song. By the end of December
+                  I had made four songs, and felt like I unlocked the secret to making songs.
+                </p>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label for="reason">Reason</label>
-              <select id="reason" name="reason" required>
-                <option value="">Choose one</option>
-                <option value="booking">Booking</option>
-                <option value="collaboration">Collaboration</option>
-                <option value="design">Design Work</option>
-                <option value="general">General Question</option>
-              </select>
-            </div>
+            <!-- Row 3 -->
+            <div class="about-story-row">
+              <img src="../images/birthday_photo_4.png" alt="Kral Benji portrait" class="about-story-image" />
 
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="6" required></textarea>
+              <div class="about-story-text fade-in-left">
+                <p>
+                  Music not only became an outlet for me, but it became something that gave me hope. Not only was I
+                  creating something meaningful out of the pain I have been through, but I was able to share it with
+                  people and let the music do the talking rather than me. Over time my music evolved into what it is
+                  today with singles like "Doctorate" and "Demon Slayer."
+                </p>
+              </div>
             </div>
-
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
+          </div>
         </div>
       </section>
     </main>
