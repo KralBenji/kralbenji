@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Redirect /pages/page.html to /page only when directly requested by browser
+RewriteCond %{THE_REQUEST} \s/+pages/([^.]+)\.html[\s?] [NC]
+RewriteRule ^pages/([^.]+)\.html$ /$1 [R=301,L]
+
+# Redirect /page.html to /page only when directly requested by browser
+RewriteCond %{THE_REQUEST} \s/+([^.]+)\.html[\s?] [NC]
+RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
+
+# Serve /page from /pages/page.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/pages/$1.html -f
+RewriteRule ^([^/]+)/?$ pages/$1.html [L]
