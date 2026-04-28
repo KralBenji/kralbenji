@@ -1,21 +1,22 @@
 :root {
-    /* Colors */
-    --color-bg: #F0EEE9;
-    --color-surface: #111116;
-    --color-accent: #6D9BC2;
-    --color-text: #0b0b0f;
-    --color-muted: #0b0b0f;
-    /* Typography */
-    --font-main: "Raleway", sans-serif;
-    /* Spacing Scale (8px system - like minecraft or computers) */
-    --space-xxs: 4px;
-    --space-xs: 8px;
-    --space-sm: 16px;
-    --space-md: 24px;
-    --space-lg: 32px;
-    --space-xl: 48px;
-    --space-2xl: 64px;
-    --space-3xl: 96px;
-    /* Layout */
-    --max-width: 1200px;
+  /* Colors */
+  --color-bg: #f0eee9;
+  --color-surface: #111116;
+  --color-accent: #6d9bc2;
+  --color-accent-dark: #4f6fdc;
+  --color-text: #0b0b0f;
+  --color-muted: #0b0b0f;
+  /* Typography */
+  --font-main: "Raleway", sans-serif;
+  /* Spacing Scale (8px system - like minecraft or computers) */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  /* Layout */
+  --max-width: 1200px;
 }
