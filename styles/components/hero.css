@@ -3,99 +3,101 @@
 ========================== */
 
 .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 340px;
-    /* desktop height */
-    position: relative;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
+  height: 340px;
+  position: relative;
+
+  background-image: url("../../images/richmondskylinebanner.jpg");
+  background-image: url("../../images/richmondskylinebanner.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 /* Image */
 
 .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
 }
-
 
 /* Overlay */
 
 .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.2));
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.2));
 }
-
 
 /* Text */
 
 .hero-content {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: flex-end;
-    /* pushes content toward bottom */
-    justify-content: center;
-    padding-bottom: 100px;
-    /* control how far up from bottom */
-    z-index: 2;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  /* pushes content toward bottom */
+  justify-content: center;
+  padding-bottom: 100px;
+  /* control how far up from bottom */
+  z-index: 2;
 }
 
 .hero-title {
-    color: #ffffff;
+  color: #ffffff;
 }
-
 
 /* Tablet */
 
 @media (min-width: 481px) and (max-width: 767px) {
-    .hero {
-        height: 260px;
-    }
-    .hero-content {
-        padding-bottom: 70px;
-    }
-    .hero-image {
-        object-position: center 55%;
-    }
-    .site-header {
-        background: #000;
-    }
-    .nav-toggle {
-        display: none;
-    }
-    .site-nav {
-        display: block !important;
-        position: static;
-        background: none;
-    }
-    .nav-list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        padding: 10px 0;
-        margin: 0;
-    }
+  .hero {
+    height: 260px;
+  }
+  .hero-content {
+    padding-bottom: 70px;
+  }
+  .hero-image {
+    object-position: center 55%;
+  }
+  .site-header {
+    background: #000;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .site-nav {
+    display: block !important;
+    position: static;
+    background: none;
+  }
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 10px 0;
+    margin: 0;
+  }
 }
-
 
 /* Laptop */
 
 @media (min-width: 768px) {
-    .hero {
-        height: 340px;
-    }
-    .hero-content {
-        padding-bottom: 70px;
-    }
-    .hero-image {
-        object-position: center 45%;
-    }
+  .hero {
+    height: 340px;
+  }
+  .hero-content {
+    padding-bottom: 70px;
+  }
+  .hero-image {
+    object-position: center 45%;
+  }
 }
