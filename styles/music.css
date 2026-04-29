@@ -67,19 +67,36 @@
   padding: 0.6rem 1.5rem;
   border-radius: 999px;
   border: none;
-  background: var(--color-accent);
-  color: var(--color-bg);
+
+  /* Always gradient */
+  background: linear-gradient(to right, var(--color-accent), var(--color-accent-dark));
+  background-size: 200% 100%;
+  background-position: left;
+
+  color: #fff;
   font-weight: 600;
   cursor: pointer;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  transition: transform 0.2s ease;
+
+  transition:
+    transform 0.2s ease,
+    background-position 0.3s ease,
+    box-shadow 0.25s ease;
 }
 
 .listen-toggle:hover {
   transform: translateY(-2px);
+  background-position: right;
+  box-shadow: 0 0 12px var(--color-accent-glow);
+}
+
+.listen-toggle:active {
+  transform: translateY(0);
+  box-shadow: 0 0 6px var(--color-accent-glow);
 }
 
 /* Arrow animation */
@@ -148,7 +165,7 @@
 
 .platform-link:hover {
   transform: translateY(-2px);
-  filter: drop-shadow(0 0 6px var(--color-accent));
+  filter: drop-shadow(0 0 6px var(--color-accent-glow));
 }
 
 .platform-icon {
@@ -275,6 +292,6 @@
 
   .music-card:hover {
     transform: translateY(-6px);
-    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.25)) drop-shadow(0 0 12px var(--color-accent-glow));
   }
 }

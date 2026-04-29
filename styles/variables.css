@@ -2,8 +2,10 @@
   /* Colors */
   --color-bg: #f0eee9;
   --color-surface: #111116;
-  --color-accent: #6d9bc2;
-  --color-accent-dark: #4f6fdc;
+  --color-accent: #aa9cff;
+  --color-accent-dark: #8d80dd;
+  --color-accent-light: #c9c2ff;
+  --color-accent-glow: rgba(170, 156, 255, 0.35);
   --color-text: #0b0b0f;
   --color-muted: #0b0b0f;
   /* Typography */

@@ -107,7 +107,7 @@ nav {
 /* Hover Accent */
 
 .hamburger:hover span {
-  background-color: #7499ff;
+  background-color: var(--color-accent);
 }
 
 /* ==========================
@@ -150,7 +150,7 @@ nav {
 }
 
 .nav-panel a:hover {
-  color: #7499ff;
+  color: var(--color-accent);
 }
 
 /* ==========================
