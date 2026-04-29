@@ -10,8 +10,10 @@
   height: 340px;
   position: relative;
 
-  background-image: url("../../images/richmondskylinebanner.jpg");
-  background-image: url("../../images/richmondskylinebanner.webp");
+  /* Fallback Hero Image for browsers that don't support WebP */
+  background-image: url("/images-original/hero/richmond-skyline-hero.jpg");
+  /* Compressed Hero Image in WebP format for browsers that support it  */
+  background-image: url("/images/hero/richmond-skyline-hero.webp");
 
   background-size: cover;
   background-position: center;
