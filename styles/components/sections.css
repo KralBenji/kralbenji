@@ -44,16 +44,19 @@
 } */
 
 .section-title-wrap {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   margin-top: var(--space-sm);
 }
 
 .section-title-line {
-  width: 140px;
+  /* Changed from fixed width to percentage for better responsiveness */
+  width: 80%;
   height: 6px;
   background: var(--color-accent);
-  margin: 0 auto;
+  margin-top: var(--space-xs);
   border-radius: 999px;
 
   transform: scaleX(0);
