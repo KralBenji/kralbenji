@@ -1,4 +1,4 @@
-name: Deploy Website
+name: Deploy to VPS
 
 on:
   push:
@@ -10,12 +10,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy to VPS
+      - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            cd ${{ secrets.SITE_PATH }}
-            git pull origin main
+            set -e
+            cd /var/www/kralbenji.com/public_html
+            echo "Running deploy script..."
+            chmod +x deploy.sh
+            ./deploy.sh
+
+# Default Script (Uncomment for Normal Use)
+#         script: |
+#             set -e
+#             cd /var/www/kralbenji/public_html
+#             echo "Running deploy script..."
+#             chmod +x deploy.sh
+#             ./deploy.sh
+
+# Script with Debugging Commands (Uncomment for Debugging)
+# script: |
+#   set -e
+#   pwd
+#   ls -la
+#   cd /var/www/kralbenji.com/public_html
+#   pwd
+#   ls -la
+#   chmod +x deploy.sh
+#   ./deploy.sh
