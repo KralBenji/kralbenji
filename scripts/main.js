@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================
-   Section Title Underline Animation
+   Section Title  Animation
 ========================== */
 
 function initSectionTitleLines() {
-  const titleLines = document.querySelectorAll(".section-title-line");
+  const titleLines = document.querySelectorAll(".section-title, .section-title-line");
 
   if (!titleLines.length) return;
 

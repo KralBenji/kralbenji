@@ -8,35 +8,67 @@
 
 .section-title {
   text-align: center;
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
+  color: #0b0b0f;
+
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  letter-spacing: 0.14em;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 0.5s ease,
+    letter-spacing 0.5s ease,
+    transform 0.4s ease;
 }
+
+.section-title.animate {
+  opacity: 1;
+  letter-spacing: 0.08em;
+  transform: scale(1);
+}
+
+/*Scale In Animation for Section Title
+.section-title {
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.section-title.animate {
+  opacity: 1;
+  transform: scale(1);
+} */
 
 .section-title-wrap {
   display: inline-block;
   text-align: center;
+  margin-top: var(--space-sm);
 }
 
-.music-section,
-.latest-release,
-.about-section {
-  text-align: center;
-}
-
-/* Blue underline */
 .section-title-line {
-  width: 90%;
-  height: 4px;
+  width: 140px;
+  height: 6px;
   background: var(--color-accent);
   margin: 0 auto;
   border-radius: 999px;
 
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform 0.6s ease;
+  transition: transform 0.6s ease 0.1s;
 }
 
 .section-title-line.animate {
   transform: scaleX(1);
+}
+
+.music-section,
+.latest-release,
+.about-section {
+  text-align: center;
 }
 
 /* Consistent spacing below titles */

@@ -29,6 +29,7 @@ header {
 @media (min-width: 481px) {
   header {
     position: static;
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2);
   }
 }
 
