@@ -10,9 +10,6 @@
   height: 340px;
   position: relative;
 
-  /* Fallback Hero Image for browsers that don't support WebP */
-  background-image: url("/images-original/hero/richmond-skyline-hero.jpg");
-  /* Compressed Hero Image in WebP format for browsers that support it  */
   background-image: url("/images/hero/richmond-skyline-hero.webp");
 
   background-size: cover;
@@ -20,7 +17,9 @@
   background-repeat: no-repeat;
 }
 
-/* Image */
+/* ==========================
+   Hero Image
+========================== */
 
 .hero-image {
   width: 100%;
@@ -30,7 +29,9 @@
   display: block;
 }
 
-/* Overlay */
+/* ==========================
+   Hero Overlay
+========================== */
 
 .hero::after {
   content: "";
@@ -39,17 +40,17 @@
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.2));
 }
 
-/* Text */
+/* ==========================
+   Hero Content
+========================== */
 
 .hero-content {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: flex-end;
-  /* pushes content toward bottom */
   justify-content: center;
   padding-bottom: 60px;
-  /* control how far up from bottom */
   z-index: 2;
 }
 
@@ -63,7 +64,6 @@
   display: inline-block;
 }
 
-/* Changed from fixed width to percentage for better responsiveness */
 .hero-title::after {
   content: "";
   display: block;
@@ -81,6 +81,10 @@
   animation: heroLineExpand 0.8s ease 0.15s forwards;
 }
 
+/* ==========================
+   Animation
+========================== */
+
 @keyframes heroLineExpand {
   from {
     transform: scaleX(0);
@@ -91,48 +95,37 @@
   }
 }
 
-/* Tablet */
+/* ==========================
+   Tablet
+========================== */
 
 @media (min-width: 481px) and (max-width: 767px) {
   .hero {
     height: 260px;
   }
+
   .hero-content {
     padding-bottom: 25px;
   }
+
   .hero-image {
     object-position: center 55%;
   }
-  .site-header {
-    background: #000;
-  }
-  .nav-toggle {
-    display: none;
-  }
-  .site-nav {
-    display: block !important;
-    position: static;
-    background: none;
-  }
-  .nav-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding: 10px 0;
-    margin: 0;
-  }
 }
 
-/* Laptop */
+/* ==========================
+   Desktop
+========================== */
 
 @media (min-width: 768px) {
   .hero {
     height: 340px;
   }
+
   .hero-content {
     padding-bottom: 30px;
   }
+
   .hero-image {
     object-position: center 45%;
   }

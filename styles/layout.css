@@ -3,7 +3,7 @@
 ========================== */
 
 /* ==========================
-   Container
+   1. Container
 ========================== */
 
 .container {
@@ -15,7 +15,7 @@
 }
 
 /* ==========================
-   Header (Over Hero on mobile)
+   2. Header
 ========================== */
 
 header {
@@ -34,7 +34,7 @@ header {
 }
 
 /* ==========================
-   Navigation
+   3. Navigation
 ========================== */
 
 nav {
@@ -45,7 +45,7 @@ nav {
 }
 
 /* ==========================
-   Hamburger Button
+   4. Hamburger Button
 ========================== */
 
 .hamburger {
@@ -58,10 +58,7 @@ nav {
   border: none;
   cursor: pointer;
   z-index: 5000;
-  /* ALWAYS on top */
 }
-
-/* Hamburger Bars */
 
 .hamburger span {
   position: absolute;
@@ -70,10 +67,13 @@ nav {
   height: 3px;
   background-color: white;
   border-radius: 2px;
-  transition: all 0.3s ease;
-}
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.35);
 
-/* Position Each Bar */
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
 
 .hamburger span:nth-child(1) {
   top: 0;
@@ -86,10 +86,6 @@ nav {
 .hamburger span:nth-child(3) {
   bottom: 0;
 }
-
-/* ==========================
-   Animate Into X
-========================== */
 
 .hamburger.active span:nth-child(1) {
   top: 12px;
@@ -105,14 +101,13 @@ nav {
   transform: rotate(-45deg);
 }
 
-/* Hover Accent */
-
-.hamburger:hover span {
+.hamburger:hover span,
+.hamburger.active span {
   background-color: var(--color-accent);
 }
 
 /* ==========================
-   Slide Navigation Panel
+   5. Slide Navigation Panel
 ========================== */
 
 .nav-panel {
@@ -135,8 +130,6 @@ nav {
   right: 0;
 }
 
-/* Nav Links */
-
 .nav-panel li {
   margin: 0;
 }
@@ -155,7 +148,7 @@ nav {
 }
 
 /* ==========================
-   Background Overlay
+   6. Background Overlay
 ========================== */
 
 .nav-overlay {
@@ -174,7 +167,7 @@ nav {
 }
 
 /* ==========================
-   Scroll Lock
+   7. Scroll Lock
 ========================== */
 
 .no-scroll {
@@ -188,7 +181,7 @@ body {
 }
 
 /* ==========================
-   Footer
+   8. Footer
 ========================== */
 
 .site-footer {
@@ -198,21 +191,16 @@ body {
 }
 
 /* ==========================
-   Section Spacing
+   9. Section Spacing
 ========================== */
 
 section {
   padding: var(--space-xl) 0;
 }
 
-/* Hero should touch top of viewport and sit tight to content */
-
 .hero {
   padding: 0;
 }
-
-/* First main section (Latest Song) – very tight gap under hero,
-   and small space before About */
 
 .latest-release {
   padding-top: 0;
@@ -220,7 +208,7 @@ section {
 }
 
 /* ==========================
-   Video Wrapper (16:9, fully responsive)
+   10. Video Wrapper
 ========================== */
 
 .video-wrapper {
