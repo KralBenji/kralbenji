@@ -14,8 +14,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Wait before SSH deploy
+        run: sleep 15
+
       - name: Deploy to VPS
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1.2.0
 
         with:
           host: ${{ secrets.VPS_HOST }}
